@@ -1,3 +1,10 @@
 .angular
 dist
 node_modules
+
+# generated test bundle
+tests/_utils.mjs
+# vite
+dist
+node_modules
+.DS_Store

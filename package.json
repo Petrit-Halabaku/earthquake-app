@@ -1,36 +1,24 @@
 {
-  "name": "seismokode-dashboard",
+  "name": "seismos",
   "private": true,
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "ng": "npx ng",
-    "start": "npx ng serve",
-    "build": "npx ng build",
-    "test": "npx ng test"
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "pretest": "esbuild src/data/quakeUtils.ts --bundle --format=esm --platform=node --outfile=tests/_utils.mjs",
+    "test": "node --test 'tests/*.test.mjs'",
+    "generate:landdots": "node scripts/generate-land-dots.mjs"
   },
   "dependencies": {
-    "@angular/animations": "^17.0.0",
-    "@angular/common": "^17.0.0",
-    "@angular/compiler": "^17.0.0",
-    "@angular/core": "^17.0.0",
-    "@angular/forms": "^17.0.0",
-    "@angular/platform-browser": "^17.0.0",
-    "@angular/router": "^17.0.0",
-    "@asymmetrik/ngx-leaflet": "^17.0.0",
-    "date-fns": "^3.6.0",
-    "echarts": "^5.4.3",
-    "leaflet": "^1.9.4",
-    "ngx-echarts": "^17.1.0",
-    "ngx-toastr": "^19.0.0",
-    "rxjs": "^7.8.1",
-    "tslib": "^2.5.0",
-    "zone.js": "~0.14.0"
+    "echarts": "^5.5.1",
+    "gsap": "^3.12.5",
+    "three": "^0.170.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.0",
-    "@angular/cli": "^17.0.0",
-    "@angular/compiler-cli": "^17.0.0",
-    "@types/leaflet": "^1.9.8",
-    "typescript": "^5.2.2",
-    "@docusaurus/module-type-aliases": "2.4.1"
+    "@types/three": "^0.170.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   }
 }
